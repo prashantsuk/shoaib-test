@@ -1,0 +1,22 @@
+---
+
+- name: "1.3.1 | PATCH | Ensure bootloader password is set"
+  ansible.builtin.copy:
+      dest: "{{ rhel8cis_boot_path }}user.cfg"  # noqa template-instead-of-copy
+      content: "GRUB2_PASSWORD={{ rhel8cis_bootloader_password_hash }}"
+      owner: root
+      group: root
+      mode: '0600'
+  notify: Rebuild_grub
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
